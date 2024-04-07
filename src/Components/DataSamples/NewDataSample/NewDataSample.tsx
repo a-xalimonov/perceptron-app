@@ -5,9 +5,9 @@ interface NewDataSampleProps {
     sample: {
         x: number[];
         y: number[];
-    },
-    setSample: (x: number[], y: number[]) => void,
-    removeSample: () => void,
+    };
+    setSample: (x: number[], y: number[]) => void;
+    removeSample: () => void;
 }
 
 function NewDataSample({ sample, setSample, removeSample }: NewDataSampleProps) {
@@ -40,7 +40,7 @@ function NewDataSample({ sample, setSample, removeSample }: NewDataSampleProps) 
         const xArr = parseInput(xValue);
         const yArr = parseInput(yValue);
         if (xArr.length && yArr.length) {
-            setSample(xArr, yArr)
+            setSample(xArr, yArr);
         }
     }
 
@@ -48,7 +48,7 @@ function NewDataSample({ sample, setSample, removeSample }: NewDataSampleProps) 
         <div className="new-sample">
             <input type="text" onChange={xChangeHandler} value={xValue} />
             <input type="text" onChange={yChangeHandler} value={yValue} />
-            <button onClick={setSampleHandler}>Add</button>
+            <button onClick={setSampleHandler}>{sample ? `Replace` : `Add`}</button>
             <button onClick={removeSample}>Delete</button>
         </div>
     );

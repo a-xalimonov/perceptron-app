@@ -27,8 +27,8 @@ export function getInitalValues() {
 
     const layers: layerData[] = model.layers.map(layer => {
         return {
-            weights: layer.weights.matrix,
-            bias: layer.bias.row(0),
+            weights: layer.weights,
+            bias: layer.bias[0],
             activation: 'tanh',
             calculated: [] as number[],
         }

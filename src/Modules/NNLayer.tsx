@@ -20,24 +20,21 @@ export class NNLayer {
         outputsOrBias: number | number[],
         activation: string = "identity"
     ) {
-        let weightsArr: number[][], biasArr: number[];
         if (Array.isArray(inputsOrWeights) && Array.isArray(outputsOrBias)) {
-            weightsArr = inputsOrWeights;
-            biasArr = outputsOrBias;
-        } else {
+            this.weights = new Matrix(inputsOrWeights);
+            this.bias = new Matrix([outputsOrBias]);
+        } else {            
             const inputs = inputsOrWeights as number;
             const outputs = outputsOrBias as number;
-            weightsArr = [];
+            this.weights = new Matrix();            
             for (let i = 0; i < inputs; i++) {
-                weightsArr[i] = [];
+                this.weights[i] = [];
                 for (let j = 0; j < outputs; j++) {
-                    weightsArr[i].push(2 * Math.random() - 1)
+                    this.weights[i].push(2 * Math.random() - 1)
                 }
             }
-            biasArr = new Array(outputs).fill(0);
+            this.bias = new Matrix([new Array(outputs).fill(0)]);
         }
-        this.weights = new Matrix(weightsArr);
-        this.bias = new Matrix([biasArr]);
         this.activation = Activation[activation]();
     }
 
@@ -62,7 +59,7 @@ export class NNLayer {
         for (let i = 0; i < input.length; i++) {
             const X = input[i];
             const Y = X.mult(this.weights).add(this.bias);
-            const A = Y.map(this.activation.func);
+            const A = Y.map2d(this.activation.func);
             this.values[i] = {
                 X: X,
                 Y: Y,
@@ -81,7 +78,7 @@ export class NNLayer {
             const vals = this.values[i];
             const aGrad = aGradArr[i];
 
-            const yGrad = aGrad.product(vals.Y.map(this.activation.deriv));
+            const yGrad = aGrad.product(vals.Y.map2d(this.activation.deriv));
             wGradArr[i] = vals.X.transpose().mult(yGrad);
             bGradArr[i] = yGrad;
             xGradArr[i] = yGrad.mult(this.weights.transpose());

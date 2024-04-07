@@ -47,7 +47,7 @@ function TrainPanel() {
 
         const newParams = model.layers.map(layer => {
             return {
-                weights: layer.weights.matrix,
+                weights: layer.weights,
                 bias: layer.bias.row(0),
             }
         });
