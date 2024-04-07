@@ -1,0 +1,35 @@
+.train-panel {
+    height: 100vh;
+    background-color: rgb(36, 43, 53);
+    float: right;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.train-panel button {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.train-panel > div > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.train-panel > * {
+    margin-top: 6px;
+}
+
+.train-panel input {
+    width: 50%;
+}
+
+.train-panel textarea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    resize: none;
+}

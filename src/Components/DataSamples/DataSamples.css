@@ -1,0 +1,34 @@
+.data-samples {
+    height: 100vh;
+    background-color: #242b35;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.samples-table {    
+    table-layout: fixed;
+}
+
+.samples-table thead th {    
+    width: 50%;
+}
+
+.samples-table tr {
+    background-color: #5a6774;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    color: white
+}
+
+.samples-table tbody tr.active td{
+    background-color: #83863b;
+}
+
+.samples-table tbody td.wrong {
+    background-color: #804545;
+}

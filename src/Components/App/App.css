@@ -1,0 +1,27 @@
+.App {
+    background-color: rgb(63, 77, 94);
+    min-width: 100vw;
+}
+
+.highlighted {
+    transition: 100ms;
+}
+
+.highlighted:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+button {
+    color: #252525;
+    background-color: #b4bec5;
+    border-radius: 2px;
+    border: none;
+    transition: 100ms;
+    height: 24px;
+}
+
+button:hover {
+  background-color: #cfdae2;
+  cursor: pointer;
+}

@@ -1,0 +1,23 @@
+.scheme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.add-layer {
+    height: 12%;
+    width: 30px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #242b35;
+    color: #ffffff;
+    margin-block: 20px;
+    writing-mode: vertical-lr;
+}
+
+.add-layer:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

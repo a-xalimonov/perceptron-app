@@ -1,0 +1,44 @@
+.nodes div {
+    color: #ffffff;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    width: 30px;
+}
+
+.neuron {   
+    margin: 24px 0px;
+    border-radius: 15px;
+    background-color: #000000;
+}
+
+.neuron.highlighted:hover {
+  transform: scale(1.1);
+}
+
+.nodes span {   
+    position: relative;
+    bottom: 24px;
+}
+
+.nodes select {
+    color: #ffffff;
+    text-align: center;
+    background-color: #00000000;
+    appearance: none;
+    padding: 4px;
+    position: fixed;
+    top: 3%;
+    transform: translateX(-25%);
+}
+
+select option {
+    background-color: #242b35;
+}
+
+.add-button {
+    border-radius: 10px;
+    background-color: #242b35;
+    position: fixed;
+    bottom: 3%;
+}
